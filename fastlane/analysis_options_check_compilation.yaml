@@ -1,3 +1,5 @@
+# To use Fastlane for deployment in Flutter,
+
 include: package:flutter_lints/flutter.yaml
 
 analyzer:
