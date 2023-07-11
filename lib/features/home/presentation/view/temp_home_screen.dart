@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate_project/features/home/domain/models/home.dart';
 import 'package:flutter_logger_plus/flutter_logger_plus.dart';
@@ -38,6 +39,18 @@ class TempHomeScreen extends StatelessWidget {
               TextButton(
                 onPressed: () => throw Exception(),
                 child: const Text("Throw Test Exception"),
+              ),
+              TextButton(
+                onPressed: () async {
+              await FirebaseAnalytics.instance.logEvent(
+                    name: "share_image",
+                    parameters: {
+                      "image_name": "name",
+                      "full_text": "text",
+                    },
+                  );
+                },
+                child: const Text("Test firebase analysis"),
               ),
             ],
           ),
