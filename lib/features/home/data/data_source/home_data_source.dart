@@ -1,5 +1,5 @@
 import '../../../../constants/status_code.dart';
-import '../../../../service/service.dart';
+import '../../../../service/api_service.dart';
 import 'package:flutter_logger_plus/flutter_logger_plus.dart';
 
 import '../../../../di/remote_response.dart';

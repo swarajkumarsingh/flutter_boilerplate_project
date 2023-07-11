@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_boilerplate_project/config.dart';
 
 import 'package:flutter_boilerplate_project/di/api.dart';
+import 'package:flutter_logger_plus/flutter_logger_plus.dart';
 
-import 'service.dart';
+import 'api_service.dart';
 
 final apiServiceImpl = ApiServiceImpl(Api());
 
@@ -12,6 +14,7 @@ class ApiServiceImpl extends ApiService {
 
   @override
   Future<Response> getHomeData() async {
-    return await _api.get("https://jsonplaceholder.typicode.com/posts");
+    logger.pink(Config.baseUrl);
+    return await _api.get(Config.baseUrl);
   }
 }

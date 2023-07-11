@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config.dart';
+import '../../constants/constants.dart';
 
 /// Custom SnackBar which is used through out the app.
 ScaffoldFeatureController<SnackBar, SnackBarClosedReason>? showCustomSnackBar({

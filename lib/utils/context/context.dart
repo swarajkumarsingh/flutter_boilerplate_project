@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config.dart';
+import '../../constants/constants.dart';
 
 final contextUtils = ContextUtils();
 

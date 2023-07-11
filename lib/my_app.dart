@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_approuter/flutter_approuter.dart';
+import 'package:flutter_boilerplate_project/features/home/presentation/view/temp_home_screen.dart';
+import 'package:flutter_boilerplate_project/utils/restart/restart_widget.dart';
 
-import 'config.dart';
+import 'constants/constants.dart';
 
 class AppWrapper extends StatelessWidget {
   const AppWrapper({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MyApp();
+    return const RestartWidget(child: MyApp());
   }
 }
 
@@ -31,7 +33,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
         useMaterial3: true,
       ),
-      home: const Scaffold(),
+      home: const TempHomeScreen(),
     );
   }
 }

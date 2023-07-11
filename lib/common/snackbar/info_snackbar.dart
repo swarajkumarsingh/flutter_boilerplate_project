@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../config.dart';
+import '../../constants/constants.dart';
 import 'custom_snackbar.dart';
 
 /// A custom snackbar used to show info.
