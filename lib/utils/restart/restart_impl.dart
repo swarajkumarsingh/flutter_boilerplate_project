@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../main.dart';
+import '../../my_app.dart';
+import '../../provider/generic_data_provider.dart';
 import 'restart_widget.dart';
 import 'restart.dart';
 import 'package:restart_app/restart_app.dart';
