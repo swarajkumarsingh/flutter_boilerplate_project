@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 
-import '../common/widgets/snackbar/show_snackbar.dart';
+import '../common/snackbar/show_snackbar.dart';
 
 final dioErrorUtil = _DioErrorUtil();
 

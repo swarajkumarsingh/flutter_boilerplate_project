@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../my_app.dart';
+import '../../my_app.dart';
 import 'custom_snackbar.dart';
 
 const Color warningColor = Color(0xFFF18C33);
