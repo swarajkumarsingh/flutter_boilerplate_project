@@ -266,10 +266,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_logger_plus
-      sha256: "585f3626632a259a426d6eb66494e445ef5244333844035502040b14d22f8037"
+      sha256: "192f3247c01b080f620d8c5d9a45ff1097e11eb0c5bbf6516c6f38883007ad04"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1"
+    version: "4.0.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter

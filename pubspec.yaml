@@ -14,7 +14,7 @@ dependencies:
   intl: ^0.18.1
   shared_preferences: ^2.2.0
   flutter_approuter: ^3.0.1
-  flutter_logger_plus: ^1.0.1
+  flutter_logger_plus: ^4.0.0
   flutter_encrypt_plus: ^2.0.0
   dio: ^5.2.1+1
   dio_smart_retry: ^5.0.0
