@@ -1,35 +1,20 @@
 import 'dart:async';
-import 'dart:isolate';
+import 'dart:io';
 
-import 'package:restart_app/restart_app.dart';
-
-import 'config.dart';
+import 'constants/http_override.dart';
 import 'error_tracker/error_tracker.dart';
 import 'my_app.dart';
 import 'package:flutter/material.dart';
 
-// void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await env.initEnv();
-//   runApp(const MyApp());
-// }
-
 void main() => _init();
 
 Future<void> _init() async {
-  WidgetsFlutterBinding.ensureInitialized();
+  HttpOverrides.global = MyHttpOverrides();
+  await runZonedGuarded<Future<void>>(() async {
+    WidgetsFlutterBinding.ensureInitialized();
 
-  // await Firebase.initializeApp();
+    await errorTracker.handleSetup();
 
-  FlutterError.onError = errorTracker.onFlutterError;
-
-  Isolate.current.addErrorListener(RawReceivePort((pair) async {
-    if (isInProduction) {
-      final List<dynamic> errorAndStacktrace = pair;
-      await errorTracker.firebaseRecordError(errorAndStacktrace);
-      await Restart.restartApp();
-    }
-  }).sendPort);
-
-  runApp(const AppWrapper());
+    runApp(const AppWrapper());
+  }, errorTracker.captureError);
 }

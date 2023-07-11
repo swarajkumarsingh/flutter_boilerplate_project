@@ -13,8 +13,12 @@
 // import '../constants.dart';
 // import 'breadcrumbs.dart';
 
+import 'dart:isolate';
+
 import 'package:flutter/foundation.dart';
 import 'package:restart_app/restart_app.dart';
+
+import '../config.dart';
 
 final errorTracker = _ErrorTracker();
 
@@ -22,6 +26,22 @@ class _ErrorTracker {
   void onFlutterError(FlutterErrorDetails e) {
     captureError(e, e.stack);
     if (kDebugMode) FlutterError.dumpErrorToConsole(e);
+  }
+
+  Future<void> handleError() async {
+    FlutterError.onError = errorTracker.onFlutterError;
+
+    Isolate.current.addErrorListener(RawReceivePort((pair) async {
+      if (isInProduction) {
+        final List<dynamic> errorAndStacktrace = pair;
+        await errorTracker.firebaseRecordError(errorAndStacktrace);
+        await Restart.restartApp();
+      }
+    }).sendPort);
+  }
+
+  Future<void> handleSetup() async {
+    // await Firebase.initializeApp();
   }
 
   Future<void> restartApp() async {
