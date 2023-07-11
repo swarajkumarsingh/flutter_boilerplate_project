@@ -12,18 +12,30 @@ dependencies:
   flutter:
     sdk: flutter
   intl: ^0.18.1
+
+  # Local storage
   shared_preferences: ^2.2.0
+
+  # Custom util package
   flutter_approuter: ^3.0.1
   flutter_logger_plus: ^4.0.0
   flutter_encrypt_plus: ^2.0.0
+
+  # Restart app
+  restart_app: ^1.2.1
+
+  # Dependency Injection
+  get_it: ^7.6.0
+
+  # Dio
   dio: ^5.2.1+1
   dio_smart_retry: ^5.0.0
-  restart_app: ^1.2.1
-  get_it: ^7.6.0
 
   # Class Generator
   freezed_annotation: any
   internet_connection_checker: ^1.0.0+1
+
+  # Increase FPs
   flutter_displaymode: ^0.6.0
 
   cupertino_icons: ^1.0.2
