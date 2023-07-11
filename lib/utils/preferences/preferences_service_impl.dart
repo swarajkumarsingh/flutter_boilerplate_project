@@ -2,6 +2,7 @@ import 'package:flutter_encrypt_plus/flutter_encrypt_plus.dart';
 import 'package:flutter_logger_plus/flutter_logger_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../config.dart';
 import 'preferences_service.dart';
 
 class PreferencesServiceImpl implements PreferencesService {
