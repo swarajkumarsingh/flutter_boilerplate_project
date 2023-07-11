@@ -23,15 +23,23 @@ class TempHomeScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Center(
-          child: ElevatedButton.icon(
-            onPressed: () async {
-              await checkInternet();
-            },
-            icon: const Icon(
-              Icons.ads_click_rounded,
-              color: Colors.black,
-            ),
-            label: const Text("PUSH"),
+          child: Column(
+            children: [
+              ElevatedButton.icon(
+                onPressed: () async {
+                  await checkInternet();
+                },
+                icon: const Icon(
+                  Icons.ads_click_rounded,
+                  color: Colors.black,
+                ),
+                label: const Text("PUSH"),
+              ),
+              TextButton(
+                onPressed: () => throw Exception(),
+                child: const Text("Throw Test Exception"),
+              ),
+            ],
           ),
         ),
       ),

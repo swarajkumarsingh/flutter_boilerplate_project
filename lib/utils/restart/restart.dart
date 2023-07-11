@@ -4,6 +4,6 @@ import 'restart_impl.dart';
 final RestartClass restart = RestartClassImpl();
 
 abstract class RestartClass {
-  void restart();
+  Future<bool?> restart();
   void silentRestart(BuildContext? context);
 }

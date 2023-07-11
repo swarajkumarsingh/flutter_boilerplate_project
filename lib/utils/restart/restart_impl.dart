@@ -7,9 +7,12 @@ import 'package:restart_app/restart_app.dart';
 
 class RestartClassImpl extends RestartClass {
   @override
-  void restart() {
-    Restart.restartApp();
-    return;
+  Future<bool?> restart() async {
+    final bool result  = await Restart.restartApp();
+    if (!result) {
+      throw "Unable to restart the app";
+    }
+    return result;
   }
 
   @override

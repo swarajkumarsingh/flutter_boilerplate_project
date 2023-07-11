@@ -11,6 +11,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  # Date utils package
   intl: ^0.18.1
 
   # Local storage
@@ -33,13 +35,14 @@ dependencies:
 
   # Class Generator
   freezed_annotation: any
-  internet_connection_checker: ^1.0.0+1
 
   # Increase FPs
   flutter_displaymode: ^0.6.0
 
+  # IOS icons
   cupertino_icons: ^1.0.2
-  flutter_dotenv: ^5.1.0
+  firebase_core: ^2.14.0
+  firebase_crashlytics: ^3.3.3
 
 dev_dependencies:
   flutter_test:

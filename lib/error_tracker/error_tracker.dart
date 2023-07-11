@@ -39,11 +39,7 @@ class _ErrorTracker {
       }
     }).sendPort);
   }
-
-  Future<void> handleSetup() async {
-    // await Firebase.initializeApp();
-  }
-
+  
   Future<void> restartApp() async {
     await Restart.restartApp();
   }
