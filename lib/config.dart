@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class Config {
   const Config._();
 
@@ -17,3 +19,7 @@ bool get _isDebugModeCustom {
   }());
   return value;
 }
+
+
+final GlobalKey<ScaffoldMessengerState> scaffoldMessengerKey =
+    GlobalKey<ScaffoldMessengerState>();
