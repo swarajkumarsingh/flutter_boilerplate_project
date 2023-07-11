@@ -42,12 +42,13 @@ class TempHomeScreen extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () async {
-              await FirebaseAnalytics.instance.logEvent(
-                    name: "share_image",
-                    parameters: {
-                      "image_name": "name",
-                      "full_text": "text",
-                    },
+                  final FirebaseAnalytics firebaseAnalysis =
+                      FirebaseAnalytics.instance;
+                  await firebaseAnalysis.setAnalyticsCollectionEnabled(true);
+
+                  await firebaseAnalysis.logEvent(
+                    name: "counter_incr",
+                    parameters: <String, dynamic>{"hi": "HELLO"},
                   );
                 },
                 child: const Text("Test firebase analysis"),
