@@ -6,8 +6,6 @@ import 'package:flutter_logger_plus/flutter_logger_plus.dart';
 
 import 'api_service.dart';
 
-final apiServiceImpl = ApiServiceImpl(Api());
-
 class ApiServiceImpl extends ApiService {
   final Api _api;
   ApiServiceImpl(this._api);
