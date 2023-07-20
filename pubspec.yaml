@@ -44,6 +44,12 @@ dependencies:
   firebase_core: ^2.14.0
   firebase_crashlytics: ^3.3.3
   firebase_analytics: ^10.4.3
+  device_info_plus: ^9.0.2
+  permission_handler: ^10.4.3
+  flutter_screenutil: ^5.8.4
+  connectivity_plus: ^4.0.1
+  cached_network_image: ^3.2.3
+  package_info_plus: ^4.0.2
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../utils/context/context.dart';
+import '../utils/context.dart';
 import 'generic_data_provider.dart';
 
 class GenericDataProviderImpl extends GenericDataProvider {
