@@ -9,3 +9,18 @@ extension StringExtension on String {
     String get capitalize =>
       isEmpty ? '' : '${this[0].toUpperCase()}${substring(1)}';
 }
+
+extension CStringExtension on String? {
+  /// String Null Safe Handling
+  String get jhNullSafe => this ?? '';
+}
+
+extension IntExtension on int? {
+  /// Int type to String type integer
+  String get jhIntToStr => (this ?? 0).toString();
+}
+
+extension NumExtension on num? {
+  /// num type to String type integer
+  String get jhToIntStr => (this ?? 0).toInt().toString();
+}
