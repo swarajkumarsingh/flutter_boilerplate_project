@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_boilerplate_project/config.dart';
 
-import 'package:flutter_boilerplate_project/di/api.dart';
+import 'package:flutter_boilerplate_project/dio/api.dart';
 import 'package:flutter_logger_plus/flutter_logger_plus.dart';
 
 import 'api_service.dart';

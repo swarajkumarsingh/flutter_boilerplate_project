@@ -1,4 +1,4 @@
-import '../../../../di/remote_response.dart';
+import '../../../../dio/remote_response.dart';
 import '../models/home.dart';
 import '../../data/repositories/home_repository_impl.dart';
 import '../../data/data_source/home_data_source.dart';

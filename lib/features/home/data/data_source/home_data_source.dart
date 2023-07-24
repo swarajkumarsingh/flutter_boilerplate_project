@@ -2,7 +2,7 @@ import '../../../../constants/status_code.dart';
 import '../../../../service/api_service.dart';
 import 'package:flutter_logger_plus/flutter_logger_plus.dart';
 
-import '../../../../di/remote_response.dart';
+import '../../../../dio/remote_response.dart';
 import '../../domain/models/home.dart';
 
 final homeDataSource = HomeDataSource();

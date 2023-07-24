@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate_project/features/home/domain/models/home.dart';
 import 'package:flutter_logger_plus/flutter_logger_plus.dart';
 
-import '../../../../di/remote_response.dart';
+import '../../../../dio/remote_response.dart';
 import '../../application/services/home_service.dart';
 
 class TempHomeScreen extends StatelessWidget {
