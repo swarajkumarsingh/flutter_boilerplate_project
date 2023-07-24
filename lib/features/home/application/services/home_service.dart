@@ -1,7 +1,7 @@
 import '../../../../di/remote_response.dart';
-import '../../data/repositories/home_repository.dart';
+import '../../domain/repository/home_repository.dart';
 import '../../domain/models/home.dart';
-import '../../domain/repository/home_repository_impl.dart';
+import '../../data/repositories/home_repository_impl.dart';
 
 final homeService = HomeService(homeRepositoryImpl);
 
