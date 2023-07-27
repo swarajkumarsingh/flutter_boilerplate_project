@@ -13,10 +13,10 @@ class HomeDataSource {
     try {
       final response = await apiService.getHomeData();
 
-      if (response.statusCode != STATUS_OK &&
-          response.data.toString().isEmpty &&
-          response.data != null &&
-          response.data!.id.toString().isNotEmpty) {
+      if (response.statusCode != STATUS_OK ||
+          response.data.toString().isEmpty ||
+          response.data != null ||
+          response.data!.id.toString().isEmpty) {
         return RemoteResponse.somethingWentWrong();
       }
 
