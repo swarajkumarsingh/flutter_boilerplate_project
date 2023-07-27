@@ -9,18 +9,17 @@ final homeDataSource = HomeDataSource();
 
 class HomeDataSource {
   Future<RemoteResponse<Home>> getHomeData() async {
-    RemoteResponse<Home> remoteResponse = RemoteResponse.defaultValue();
+    RemoteResponse<Home> remoteResponse;
     try {
       final response = await apiService.getHomeData();
-
+      
       if (response.statusCode != STATUS_OK ||
           response.data.toString().isEmpty ||
-          response.data != null ||
-          response.data!.id.toString().isEmpty) {
+          response.data == null) {
         return RemoteResponse.somethingWentWrong();
       }
 
-      final Home home = Home.fromJson(response.data[0]);
+      final home = Home.fromJson(response.data[0]);
       remoteResponse = RemoteResponse.success(home);
     } catch (e) {
       remoteResponse = RemoteResponse.somethingWentWrong();

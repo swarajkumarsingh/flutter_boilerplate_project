@@ -10,9 +10,9 @@ class TempHomeScreen extends StatelessWidget {
   const TempHomeScreen({super.key});
 
   Future<void> checkInternet() async {
-    logger.info("<-- Start Time"); // 10 seconds
+    logger.pink("<-- Start Time"); // 10 seconds
     final RemoteResponse<Home> remoteResponse = await homeService.getData();
-    logger.info("<-- END Time ${remoteResponse.data!.title} -->");
+    logger.success("<-- END Time ${remoteResponse.message} -->");
   }
 
   @override

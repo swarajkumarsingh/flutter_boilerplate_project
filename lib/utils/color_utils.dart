@@ -31,14 +31,14 @@ class JhColorUtils {
 
   /// 创建Material风格的color
   static MaterialColor materialColor(Color color) {
-    List strengths = <double>[.05];
-    Map swatch = <int, Color>{};
+    final List strengths = <double>[.05];
+    final Map swatch = <int, Color>{};
     final int r = color.red, g = color.green, b = color.blue;
 
     for (int i = 1; i < 10; i++) {
       strengths.add(0.1 * i);
     }
-    for (var strength in strengths) {
+    for (final strength in strengths) {
       final double ds = 0.5 - strength;
       swatch[(strength * 1000).round()] = Color.fromRGBO(
         r + ((ds < 0 ? r : (255 - r)) * ds).round(),
@@ -52,16 +52,16 @@ class JhColorUtils {
 
   /// 取随机颜色
   static Color randomColor() {
-    var red = Random.secure().nextInt(255);
-    var greed = Random.secure().nextInt(255);
-    var blue = Random.secure().nextInt(255);
+    final red = Random.secure().nextInt(255);
+    final greed = Random.secure().nextInt(255);
+    final blue = Random.secure().nextInt(255);
     return Color.fromARGB(255, red, greed, blue);
   }
 
   /// 设置动态颜色
   static Color dynamicColor(BuildContext context, Color lightColor,
       [Color? darkColor]) {
-    var isDark = Theme.of(context).brightness == Brightness.dark;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return isDark ? darkColor ?? lightColor : lightColor;
   }
 }

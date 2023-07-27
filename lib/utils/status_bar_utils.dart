@@ -13,8 +13,8 @@ class JhStatusBarUtils {
   static void setAndroidTransparentBar() {
     // 仅针对安卓
     if (Platform.isAndroid) {
-      SystemUiOverlayStyle systemUiOverlayStyle =
-          const SystemUiOverlayStyle(statusBarColor: Colors.transparent);
+      const SystemUiOverlayStyle systemUiOverlayStyle =
+          SystemUiOverlayStyle(statusBarColor: Colors.transparent);
       SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     }
   }
@@ -29,7 +29,7 @@ class JhStatusBarUtils {
   /// brightness：light:白色字体+白色图标 dark:黑色字体+黑色图标 （已在内部对iOS的取反进行处理）
   static SystemUiOverlayStyle getStatusBarStyle(
       {bool isDark = false, Brightness brightness = Brightness.light}) {
-    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(
+    final SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       // 设置顶部状态栏亮度 (Android SDK >= M), light:白色字体+白色图标 dark:黑色字体+黑色图标
       // 暗黑模式优先级高于设置的brightness

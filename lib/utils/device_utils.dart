@@ -32,37 +32,37 @@ class JhDeviceUtils {
   static bool get isIOS => isWeb ? false : Platform.isIOS;
 
   static Future<PackageInfo> getPackageInfo() async {
-    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    final PackageInfo packageInfo = await PackageInfo.fromPlatform();
     return packageInfo;
   }
 
   static Future<String> appName() async {
-    PackageInfo packageInfo = await getPackageInfo();
+    final PackageInfo packageInfo = await getPackageInfo();
     return packageInfo.appName;
   }
 
   static Future<String> packageName() async {
-    PackageInfo packageInfo = await getPackageInfo();
+    final PackageInfo packageInfo = await getPackageInfo();
     return packageInfo.packageName;
   }
 
   static Future<String> version() async {
-    PackageInfo packageInfo = await getPackageInfo();
+    final PackageInfo packageInfo = await getPackageInfo();
     return packageInfo.version;
   }
 
   static Future<String> buildNumber() async {
-    PackageInfo packageInfo = await getPackageInfo();
+    final PackageInfo packageInfo = await getPackageInfo();
     return packageInfo.buildNumber;
   }
 
   static Future<String> buildSignature() async {
-    PackageInfo packageInfo = await getPackageInfo();
+    final PackageInfo packageInfo = await getPackageInfo();
     return packageInfo.buildSignature;
   }
 
   static Future<String?> installerStore() async {
-    PackageInfo packageInfo = await getPackageInfo();
+    final PackageInfo packageInfo = await getPackageInfo();
     return packageInfo.installerStore;
   }
 

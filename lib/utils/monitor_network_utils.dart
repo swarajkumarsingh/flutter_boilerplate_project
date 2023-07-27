@@ -10,13 +10,13 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 class JhMonitorNetworkUtils {
   /// 是否有网
   static Future<bool> isNetwork() async {
-    var connectivityResult = await (Connectivity().checkConnectivity());
+    final connectivityResult = await (Connectivity().checkConnectivity());
     return connectivityResult != ConnectivityResult.none;
   }
 
   /// 获取网络状态：0 无网络，1 手机，2 wifi
   static Future<int> getNetworkStatus() async {
-    var connectivityResult = await (Connectivity().checkConnectivity());
+    final connectivityResult = await (Connectivity().checkConnectivity());
     if (connectivityResult == ConnectivityResult.mobile) {
       // 网络类型为移动网络
       return 1;
@@ -39,7 +39,7 @@ class JhMonitorNetworkUtils {
     final Connectivity connectivity = Connectivity();
 
     // 遍历onConnectivityChanged 构成的 Stream<ConnectivityResult>
-    await for (ConnectivityResult result
+    await for (final ConnectivityResult result
         in connectivity.onConnectivityChanged) {
       // 状态发生改变后将状态值添加到Stream数据流中
       yield result;
