@@ -41,24 +41,40 @@ dependencies:
 
   # IOS icons
   cupertino_icons: ^1.0.2
+
+  # Firebase Packages
   firebase_core: ^2.14.0
   firebase_crashlytics: ^3.3.3
   firebase_analytics: ^10.4.3
+
+  # Device Info package
   device_info_plus: ^9.0.2
+
+  # Handle Permissions
   permission_handler: ^10.4.3
+
+  # Get more info about user's screen
   flutter_screenutil: ^5.8.4
+
+  # Check for internet connectivity
   connectivity_plus: ^4.0.1
+
+  # Cache image locally
   cached_network_image: ^3.2.3
+
+  # Get app configurations dynamically
   package_info_plus: ^4.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+    
   # Class Generator
   build_runner: any
   json_serializable: any
   freezed: any
 
+  # Flutter Lints
   flutter_lints: ^2.0.0
 
 flutter:
