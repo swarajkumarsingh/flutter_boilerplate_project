@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class Config {
   const Config._();
 
@@ -10,12 +12,4 @@ class Config {
   static const String packageNameIOS = "com.production.dictionary";
 }
 
-final bool isInProduction = _isDebugModeCustom == false ? false : true;
-bool get _isDebugModeCustom {
-  bool value = false;
-  assert(() {
-    value = true;
-    return true;
-  }());
-  return value;
-}
+const bool isInProduction = kDebugMode == true ? false : true;

@@ -1,6 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate_project/features/home/domain/models/home.dart';
+import '../../domain/models/home.dart';
 import 'package:flutter_logger_plus/flutter_logger_plus.dart';
 
 import '../../../../dio/remote_response.dart';
@@ -37,7 +37,7 @@ class TempHomeScreen extends StatelessWidget {
                 label: const Text("PUSH"),
               ),
               TextButton(
-                onPressed: () => throw Exception(),
+                onPressed: () => throw Exception("SIMU BABU 2 👶🐥🍼"),
                 child: const Text("Throw Test Exception"),
               ),
               TextButton(

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'restart_impl.dart';
 
-final RestartClass restart = RestartClassImpl();
+final RestartClass restartUtils = RestartClassImpl();
 
 abstract class RestartClass {
   Future<bool?> restart();
-  void silentRestart(BuildContext? context);
+  void silentRestart([BuildContext? context]);
 }

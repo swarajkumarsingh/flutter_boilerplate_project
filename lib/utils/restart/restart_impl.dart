@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:restart_app/restart_app.dart';
+
 import '../../my_app.dart';
 import '../../provider/generic_data_provider.dart';
-import 'restart_widget.dart';
 import 'restart.dart';
-import 'package:restart_app/restart_app.dart';
+import 'restart_widget.dart';
 
 class RestartClassImpl extends RestartClass {
   @override
@@ -16,7 +17,7 @@ class RestartClassImpl extends RestartClass {
   }
 
   @override
-  void silentRestart(BuildContext? context) {
+  void silentRestart([BuildContext? context]) {
     if (context != null) {
       RestartWidget.restartApp(context);
       return;

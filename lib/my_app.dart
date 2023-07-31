@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_approuter/flutter_approuter.dart';
-import 'package:flutter_boilerplate_project/features/home/presentation/view/temp_home_screen.dart';
-import 'package:flutter_boilerplate_project/utils/restart/restart_widget.dart';
 
 import 'constants/constants.dart';
+import 'features/home/presentation/view/temp_home_screen.dart';
+import 'utils/restart/restart_widget.dart';
 
 class AppWrapper extends StatelessWidget {
   const AppWrapper({super.key});

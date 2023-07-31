@@ -64,6 +64,7 @@ dependencies:
 
   # Get app configurations dynamically
   package_info_plus: ^4.0.2
+  sentry_flutter: ^7.9.0
 
 dev_dependencies:
   flutter_test:
