@@ -41,6 +41,11 @@ class JhScreenUtils {
     return mediaQuery.size.width;
   }
 
+  static bool isNarrow(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+    return screenSize.width <= 380;
+  }
+
   static double get screenHeight {
     final MediaQueryData mediaQuery = MediaQueryData.fromView(
       WidgetsBinding.instance.platformDispatcher.views.single,
