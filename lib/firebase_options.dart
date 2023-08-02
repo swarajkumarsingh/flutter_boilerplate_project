@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '398435872877',
     projectId: 'flutter-boilerplate-project-sk',
     storageBucket: 'flutter-boilerplate-project-sk.appspot.com',
+    androidClientId: '398435872877-oe8a78mplkaosihvsdulejo81jb676p1.apps.googleusercontent.com',
     iosClientId: '398435872877-abbq3gc1hqclkuav2l2fjefd7et0ggj8.apps.googleusercontent.com',
     iosBundleId: 'com.example.flutterBoilerplateProject',
   );

@@ -24,6 +24,8 @@ if (flutterVersionName == null) {
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'com.google.firebase.crashlytics'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
@@ -50,6 +52,7 @@ android {
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         minSdkVersion 19
+        multiDexEnabled true
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
