@@ -1,4 +1,5 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_performance/firebase_performance.dart';
 
 final eventTracker = _EventTracker();
 
@@ -30,6 +31,10 @@ class _EventTracker {
   void logAppOpen(String stationId) {
     _firebaseAnalytics.logAppOpen();
     _firebaseAnalytics.setUserProperty(name: 'station', value: stationId);
+  }
+
+  Trace startTrace(String trace) {
+    return FirebasePerformance.instance.newTrace(trace);
   }
 
   void logShare({
