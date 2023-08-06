@@ -26,9 +26,6 @@ class _ErrorTracker {
 
   Future<void> handleError() async {
     try {
-      await Firebase.initializeApp(
-          options: DefaultFirebaseOptions.currentPlatform);
-
       if (kDebugMode) {
         logger.info("App in dev mode 🐥");
         return;
