@@ -1,12 +1,10 @@
 import 'dart:async';
 import 'dart:isolate';
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
 import '../config.dart';
 import 'package:flutter_logger_plus/flutter_logger_plus.dart';
-import '../firebase_options.dart';
 import '../utils/restart/restart.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 
@@ -16,10 +14,9 @@ import 'breadcrumbs.dart';
 final errorTracker = _ErrorTracker();
 
 class _ErrorTracker {
-  Future<void> init([String station = "station"]) async {
+  Future<void> initErrorTrackers([String station = "station"]) async {
     await Future.wait([
       _initSentry(station),
-      Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform),
       FirebaseCrashlytics.instance.setCustomKey('station', station),
     ]);
   }
@@ -31,7 +28,7 @@ class _ErrorTracker {
         return;
       }
 
-      await init();
+      await initErrorTrackers();
       FlutterError.onError = errorTracker.onFlutterError;
 
       Isolate.current.addErrorListener(RawReceivePort((pair) async {
@@ -41,7 +38,7 @@ class _ErrorTracker {
           errorAndStacktrace.last,
           fatal: true,
         );
-        if (isInProduction) await restartApp();
+        restartUtils.silentRestart();
       }).sendPort);
 
       // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
@@ -69,10 +66,6 @@ class _ErrorTracker {
       Sentry.captureException(error, stackTrace: stackTrace, hint: hint),
     ]);
     logger.success("SUCCESS");
-  }
-
-  Future<void> restartApp() async {
-    restartUtils.silentRestart();
   }
 
   Future<void> addBreadCrumb(
