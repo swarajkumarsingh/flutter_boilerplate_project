@@ -3,7 +3,6 @@ import 'dart:isolate';
 
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
-import '../config.dart';
 import 'package:flutter_logger_plus/flutter_logger_plus.dart';
 import '../utils/restart/restart.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
@@ -53,7 +52,7 @@ class _ErrorTracker {
 
   void onFlutterError(FlutterErrorDetails e) {
     captureError(e, e.stack);
-    if (!isInProduction) FlutterError.dumpErrorToConsole(e);
+    FlutterError.dumpErrorToConsole(e);
   }
 
   Future<void> captureError(
