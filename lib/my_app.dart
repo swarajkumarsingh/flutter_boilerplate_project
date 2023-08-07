@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_approuter/flutter_approuter.dart';
+import 'package:flutter_boilerplate_project/event_tracker/event_tracker.dart';
 
 import 'constants/constants.dart';
 import 'features/home/presentation/view/temp_home_screen.dart';
@@ -23,14 +24,24 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  init() async {
+    await eventTracker.logAppOpen();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'FLutter Boiler Plate code',
       navigatorKey: navigatorKey,
       debugShowCheckedModeBanner: false,
       scaffoldMessengerKey: scaffoldMessengerKey,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.purple),
         useMaterial3: true,
       ),
       home: const TempHomeScreen(),

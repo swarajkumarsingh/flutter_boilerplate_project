@@ -18,7 +18,8 @@ Future<void> _init() async {
     WidgetsFlutterBinding.ensureInitialized();
 
     await Firebase.initializeApp(
-        options: DefaultFirebaseOptions.currentPlatform);
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
 
     // add error observers & handle them
     await errorTracker.handleError();
